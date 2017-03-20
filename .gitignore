@@ -1,0 +1,8 @@
+.user.ini
+blog/
+jekyll-blog/
+Gemfile.lock
+*.pyc
+.DS_Store
+.sass-cache
+.jekyll-metadata
