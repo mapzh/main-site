@@ -18,7 +18,7 @@
   ================================================== -->
   <script src="js/main.js"></script>
   <script>
-    var first_loaded = 1;
+    var first_loaded = true;
   </script>
   <!-- Favicons
   ================================================== -->
@@ -128,16 +128,6 @@
 <!-- 网状粒子效果 -->
 <script>
   var canvas = document.getElementById("preloader");
-
-  function remove_canvas() {
-    var subcontents = canvas.remove();
-  }
-
-  if (first_loaded != 1) {
-    remove_canvas();
-    first_loaded = 0;
-    return;
-  }
   var ctx = canvas.getContext("2d");
   resize();
   window.onresize = resize;
@@ -150,7 +140,9 @@
           window.setTimeout(callback, 1000 / 60);
         };
   })();
-
+  function remove_canvas() {
+    var subcontents = canvas.remove();
+  }
   // 鼠标活动时，获取鼠标坐标
   var warea = {x: null, y: null, max: 20000};
   window.onmousemove = function(e) {
