@@ -21,7 +21,9 @@
   <!-- Favicons
   ================================================== -->
   <link rel="shortcut icon" href="favicon.png" >
-
+  <script>
+    var first_loaded = true;
+  </script>
 </head>
 <body>
   <canvas id="preloader"></canvas>
@@ -125,7 +127,6 @@
 
 <!-- 网状粒子效果 -->
 <script>
-  var first_loaded = true;
   var canvas = document.getElementById("preloader");
   var ctx = canvas.getContext("2d");
   resize();
