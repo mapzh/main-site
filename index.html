@@ -125,6 +125,7 @@
 
 <!-- 网状粒子效果 -->
 <script>
+  var first_loaded = true;
   var canvas = document.getElementById("preloader");
   var ctx = canvas.getContext("2d");
   resize();
@@ -169,13 +170,17 @@
     })
   }
   // 延迟100秒开始执行动画，如果立即执行有时位置计算会出错
-  setTimeout(function() {
-    animate();
-  }, 100);
+  if (first_loaded) {
+    setTimeout(function() {
+      animate();
+    }, 100);
 
-  setTimeout(function() {
+    setTimeout(function() {
+      remove_canvas();
+    }, 5000);
+  }else {
     remove_canvas();
-  }, 5000);
+  }
   // 每一帧循环的逻辑
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -221,7 +226,10 @@
       // 将已经计算过的粒子从数组中删除
       ndots.splice(ndots.indexOf(dot), 1);
     });
-    RAF(animate);
+    if (first_loaded) {
+      RAF(animate);
+    }
+    first_loaded = false;
   }
 </script>
 </body>
