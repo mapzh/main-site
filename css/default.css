@@ -44,6 +44,7 @@ d. Default Styles
    height: 100%;
    overflow: hidden;
    z-index: 99999;
+   background: #fff;
 }
 #status  {
    position: absolute;
