@@ -171,7 +171,7 @@
     })
   }
   // 延迟100秒开始执行动画，如果立即执行有时位置计算会出错
-  if (first_loaded) {
+  if (first_loaded == true) {
     setTimeout(function() {
       animate();
     }, 100);
@@ -227,7 +227,7 @@
       // 将已经计算过的粒子从数组中删除
       ndots.splice(ndots.indexOf(dot), 1);
     });
-    if (first_loaded) {
+    if (first_loaded == true) {
       RAF(animate);
     }
     first_loaded = false;
