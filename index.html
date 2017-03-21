@@ -42,6 +42,9 @@
           window.setTimeout(callback, 1000 / 60);
         };
   })();
+  function remove_canvas() {
+    var subcontents = canvas.remove();
+  }
   // 鼠标活动时，获取鼠标坐标
   var warea = {x: null, y: null, max: 20000};
   window.onmousemove = function(e) {
@@ -73,6 +76,10 @@
   setTimeout(function() {
     animate();
   }, 100);
+
+  setTimeout(function() {
+    remove_canvas();
+  }, 500);
   // 每一帧循环的逻辑
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
