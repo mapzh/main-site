@@ -17,13 +17,13 @@
   <!-- Script
   ================================================== -->
   <script src="js/main.js"></script>
-
+  <script>
+    var first_loaded = 0;
+  </script>
   <!-- Favicons
   ================================================== -->
   <link rel="shortcut icon" href="favicon.png" >
-  <script>
-    var first_loaded = true;
-  </script>
+
 </head>
 <body>
   <canvas id="preloader"></canvas>
@@ -128,6 +128,15 @@
 <!-- 网状粒子效果 -->
 <script>
   var canvas = document.getElementById("preloader");
+  
+  function remove_canvas() {
+    var subcontents = canvas.remove();
+  }
+
+  if (first_loaded != 0) {
+    remove_canvas();
+    return;
+  }
   var ctx = canvas.getContext("2d");
   resize();
   window.onresize = resize;
@@ -140,9 +149,7 @@
           window.setTimeout(callback, 1000 / 60);
         };
   })();
-  function remove_canvas() {
-    var subcontents = canvas.remove();
-  }
+
   // 鼠标活动时，获取鼠标坐标
   var warea = {x: null, y: null, max: 20000};
   window.onmousemove = function(e) {
@@ -171,17 +178,13 @@
     })
   }
   // 延迟100秒开始执行动画，如果立即执行有时位置计算会出错
-  if (first_loaded == true) {
-    setTimeout(function() {
-      animate();
-    }, 100);
+  setTimeout(function() {
+    animate();
+  }, 100);
 
-    setTimeout(function() {
-      remove_canvas();
-    }, 5000);
-  }else {
+  setTimeout(function() {
     remove_canvas();
-  }
+  }, 5000);
   // 每一帧循环的逻辑
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -227,10 +230,7 @@
       // 将已经计算过的粒子从数组中删除
       ndots.splice(ndots.indexOf(dot), 1);
     });
-    if (first_loaded == true) {
-      RAF(animate);
-    }
-    first_loaded = false;
+    RAF(animate);
   }
 </script>
 </body>
