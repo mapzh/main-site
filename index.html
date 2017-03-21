@@ -22,14 +22,6 @@
   ================================================== -->
   <link rel="shortcut icon" href="favicon.png" >
 
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-    }
-  </style>
 </head>
 <body>
   <canvas id="preloader"></canvas>
@@ -37,7 +29,7 @@
 
 <!-- 网状粒子效果 -->
 <script>
-  var canvas = document.getElementById("cas");
+  var canvas = document.getElementById("preloader");
   var ctx = canvas.getContext("2d");
   resize();
   window.onresize = resize;

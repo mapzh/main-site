@@ -39,23 +39,20 @@ d. Default Styles
  ------------------------------------------------------------------ */
 
 #preloader  {
-   position: fixed;
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   background: #fff;
-   z-index: 99999;
+   margin: 0;
+   padding: 0;
    height: 100%;
+   overflow: hidden;
+   z-index: 99999;
 }
-#status  {    
+#status  {
    position: absolute;
    left: 50%;
    top: 50%;
    width: 64px;
    height: 64px;
-   margin: -32px 0 0 -32px;  
-   padding: 0;    
+   margin: -32px 0 0 -32px;
+   padding: 0;
 }
 
 /* ------------------------------------------------------------------
@@ -493,9 +490,9 @@ input[type="button"] {
    font: 14px/24px 'montserrat-bold', sans-serif;
    background: #11ABB0;
    color: #fff;
-   display: inline-block;   
+   display: inline-block;
 	text-decoration: none;
-   letter-spacing: 0;   
+   letter-spacing: 0;
 	padding: 12px 20px;
 	margin-bottom: 18px;
    border: none;
@@ -751,7 +748,7 @@ properly.
       padding: 0;
 	}
    .column, .columns {
-	   width: auto !important;      
+	   width: auto !important;
 	   float: none;
 	   margin-left: 0;
 	   margin-right: 0;
@@ -826,7 +823,3 @@ properly.
 	margin-right: auto !important;
 	text-align: center !important;
 }
-
-
-
-
