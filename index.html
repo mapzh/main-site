@@ -18,7 +18,7 @@
   ================================================== -->
   <script src="js/main.js"></script>
   <script>
-    var first_loaded = 0;
+    var first_loaded = 1;
   </script>
   <!-- Favicons
   ================================================== -->
@@ -128,13 +128,14 @@
 <!-- 网状粒子效果 -->
 <script>
   var canvas = document.getElementById("preloader");
-  
+
   function remove_canvas() {
     var subcontents = canvas.remove();
   }
 
-  if (first_loaded != 0) {
+  if (first_loaded != 1) {
     remove_canvas();
+    first_loaded = 0;
     return;
   }
   var ctx = canvas.getContext("2d");
