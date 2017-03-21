@@ -1,8 +1,0 @@
-@font-face {
-  font-family: 'Indie Flower';
-  font-style: normal;
-  font-weight: 400;
-  src: url(../fonts/Indie Flower/Indie-Flower.eot);
-  src: local('Indie Flower'), local('IndieFlower'), url(../fonts/Indie Flower/Indie-Flower.svg#IndieFlower) format('svg'), url(../fonts/Indie Flower/Indie-Flower.woff) format('woff'), url(../fonts/Indie Flower/Indie-Flower.ttf) format('truetype'), url(../fonts/Indie Flower/Indie-Flower.eot?#iefix) format('embedded-opentype'), url(../fonts/Indie Flower/Indie-Flower.woff2) format('woff2');
-}
-
