@@ -14,7 +14,6 @@
   	$(window).load(function() {
 
    	// will first fade out the loading animation
-      $(window).scrollTop()
     	$("#status").fadeOut("slow");
 
     	$('.js #hero .hero-image img').addClass("animated fadeInUpBig");
